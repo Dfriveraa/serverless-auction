@@ -1,0 +1,14 @@
+{
+  "name": "auction-service",
+  "version": "1.0.0",
+  "description": "Some serverless function to test the framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^8.5.0"
+  }
+}
