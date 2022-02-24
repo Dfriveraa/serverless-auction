@@ -13,8 +13,8 @@
 
 service: auction-service
 # app and org for use with dashboard.serverless.com
-app: aws-node-http-api
-org: drivera97
+#app: aws-node-http-api
+#org: drivera97
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
