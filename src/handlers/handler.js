@@ -1,4 +1,4 @@
-const a = async () => ({
+const simpleResponse = async () => ({
   statusCode: 200,
   body: JSON.stringify(
     {
@@ -10,4 +10,4 @@ const a = async () => ({
   ),
 });
 
-module.exports.hello = a;
+module.exports.simpreResponse = simpleResponse;
