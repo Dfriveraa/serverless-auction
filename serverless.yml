@@ -50,7 +50,7 @@ plugins:
   - serverless-offline
 functions:
   create:
-    handler: src/handlers/handler.createAuction
+    handler: src/handlers/handler.createUser
     environment:
       MONGODB_URI: ${param:MONGODB_URI}
     #    The following are a few example events you can configure
@@ -58,10 +58,10 @@ functions:
     #    Check the event documentation for details
     events:
       - httpApi:
-          path: /auction
+          path: /user
           method: POST
   getall:
-    handler: src/handlers/handler.getAuctions
+    handler: src/handlers/handler.getUsers
     environment:
       MONGODB_URI: ${param:MONGODB_URI}
     #    The following are a few example events you can configure
@@ -69,7 +69,7 @@ functions:
     #    Check the event documentation for details
     events:
       - httpApi:
-          path: /auction
+          path: /user
           method: GET
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}

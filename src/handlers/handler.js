@@ -11,7 +11,7 @@ const createResponse = (statusCode, message) => {
   return response;
 };
 
-const createAuction = async (event, context, callback) => {
+const createUser = async (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
 
   const { name, surname } = JSON.parse(event.body);
@@ -27,12 +27,13 @@ const createAuction = async (event, context, callback) => {
   callback(null, response);
 };
 
-const getAuctions = async (event, context, callback) => {
+const getUsers = async (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
   const users = await User.find();
   const response = createResponse(200, users);
   callback(null, response);
 };
 
 module.exports = {
-  createAuction, getAuctions,
+  createUser, getUsers,
 };
