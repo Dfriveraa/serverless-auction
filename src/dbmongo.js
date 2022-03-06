@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-// mongoose.Promise = global.Promise;
-
 let conn = null;
 const uri = process.env.MONGODB_URI;
 
