@@ -17,6 +17,7 @@
     "serverless-offline": "^8.5.0"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^19.0.4"
+    "eslint-config-airbnb": "^19.0.4",
+    "mongoose": "^6.2.4"
   }
 }
