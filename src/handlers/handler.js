@@ -2,7 +2,7 @@ const connection = require('../dbmongo');
 const User = require('../models/user');
 
 connection.connect();
-const auctions = [];
+
 const createResponse = (statusCode, message) => {
   const response = {
     statusCode,
@@ -28,7 +28,8 @@ const createAuction = async (event, context, callback) => {
 };
 
 const getAuctions = async (event, context, callback) => {
-  const response = createResponse(200, auctions);
+  const users = await User.find();
+  const response = createResponse(200, users);
   callback(null, response);
 };
 
