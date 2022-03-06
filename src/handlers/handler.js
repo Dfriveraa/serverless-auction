@@ -1,13 +1,35 @@
-const simpleResponse = async () => ({
-  statusCode: 200,
-  body: JSON.stringify(
-    {
-      message: 'Go Serverless v1.0! Your function executed with github pipeline!',
-      input: 'version serverless cloud using stage',
-    },
-    null,
-    2,
-  ),
-});
+const auctions = [{
+  name: 'John',
+  surname: 'Doe',
+}];
 
-module.exports.simpreResponse = simpleResponse;
+const createResponse = (statusCode, message) => {
+  const response = {
+    statusCode,
+    body: JSON.stringify(message),
+  };
+  return response;
+};
+
+const createAuction = async (event, context, callback) => {
+  const { name, surname } = JSON.parse(event.body);
+
+  const auction = {
+    name,
+    surname,
+    createdAt: new Date().toISOString(),
+  };
+
+  auctions.push(auction);
+  const response = createResponse(200, auctions);
+  callback(null, response);
+};
+
+const getAuctions = async (event, context, callback) => {
+  const response = createResponse(200, auctions);
+  callback(null, response);
+};
+
+module.exports = {
+  createAuction, getAuctions,
+};

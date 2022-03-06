@@ -24,7 +24,7 @@ provider:
   name: aws
   runtime: nodejs12.x
   memorySize: 256
-  region: us-east-1 
+  region: us-east-1
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -49,15 +49,39 @@ provider:
 plugins:
   - serverless-offline
 functions:
-  hello:
-    handler: src/handlers/handler.simpleResponse
+  create:
+    handler: src/handlers/handler.createAuction
     #    The following are a few example events you can configure
     #    NOTE: Please make sure to change your handler code to work with those events
     #    Check the event documentation for details
     events:
       - httpApi:
-          path: /hello
-          method: get
+          path: /auction
+          method: POST
+  getall:
+    handler: src/handlers/handler.getAuctions
+    #    The following are a few example events you can configure
+    #    NOTE: Please make sure to change your handler code to work with those events
+    #    Check the event documentation for details
+    events:
+      - httpApi:
+          path: /auction
+          method: GET
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
